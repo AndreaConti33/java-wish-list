@@ -18,7 +18,8 @@ public class Main {
 		do {
 			System.out.println("Aggiungi elemento alla lista dei desideri:");
 			wishList.add(scanner.nextLine());
-			System.out.println("La tua lista contiene " + wishList.size() + " desideri/o.");
+			String des = wishList.size() == 1 ? "desiderio" : "desideri";
+			System.out.println("La tua lista contiene " + wishList.size() + " " + des);
 			System.out.println("Continuare? (s/n)");
 			sceltaUtente = scanner.nextLine().toLowerCase();
 			if (sceltaUtente.equals(sceltaUtenteNegativa)) {
@@ -34,9 +35,9 @@ public class Main {
 		Collections.sort(wishList);
 //		System.out.println("ecco la tua lista " + wishList);
 
-		System.out.print("Inserisci il nome: ");
+		System.out.print("Inserisci il tuo nome: ");
 		String nome = scanner.nextLine();
-		System.out.println("Inserici l'indirizzo: ");
+		System.out.println("Inserici il tuo indirizzo: ");
 		String indirizzo = scanner.nextLine();
 		LetteraBabboNatale lettera = new LetteraBabboNatale(nome, indirizzo, wishList);
 		try {
